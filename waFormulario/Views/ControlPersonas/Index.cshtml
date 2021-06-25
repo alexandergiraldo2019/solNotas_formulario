@@ -1,0 +1,52 @@
+﻿@model IEnumerable<waFormulario.Models.ControlPersona>
+
+@{
+    ViewBag.Title = "Lista de personas";
+}
+
+<h2>Lista de personas</h2>
+
+<p>
+    @Html.ActionLink("Nuevo", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaNacimiento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IdUbicacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IdTipoEnfermedad)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaNacimiento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdUbicacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdTipoEnfermedad)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id = item.IdRegistro }) |
+            @Html.ActionLink("Consultar", "Details", new { id = item.IdRegistro }) |
+            @Html.ActionLink("Borrar", "Delete", new { id = item.IdRegistro }) |
+            @Html.ActionLink("Imprimir", "Imprimir", new { id = item.IdRegistro })
+        </td>
+    </tr>
+}
+
+</table>

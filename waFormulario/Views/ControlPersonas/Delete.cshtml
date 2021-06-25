@@ -1,0 +1,56 @@
+﻿@model waFormulario.Models.ControlPersona
+
+@{
+    ViewBag.Title = "Borrar";
+}
+
+<h2>Borrar</h2>
+
+<h3>Esta seguro de querer eliminar el registro?</h3>
+<div>
+    <h4>ControlPersona</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaNacimiento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaNacimiento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IdUbicacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdUbicacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IdTipoEnfermedad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdTipoEnfermedad)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Borrar" class="btn btn-danger" /> |
+            @Html.ActionLink("Regresar", "Index")
+        </div>
+    }
+</div>
